@@ -17,3 +17,6 @@
     [testButton setEnlargeEdgeWithTop:100 right:100 bottom:100 left:100];
 ```
 
+显示效果：
+-----
+![image](https://github.com/GeeLi/UIButton-EnlargeTouchArea-Extention/raw/master/test.gif)
