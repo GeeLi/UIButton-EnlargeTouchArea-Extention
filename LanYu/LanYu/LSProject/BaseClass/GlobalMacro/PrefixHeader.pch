@@ -1,0 +1,76 @@
+//
+//  PrefixHeader.pch
+//  FrameworkTest
+//
+//  Created by 李帅 on 15/11/29.
+//  Copyright © 2015年 李帅. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import "GlobalMacro.h"
+
+// 封装类
+#import "GlobalMethod.h"
+#import "UIMethod.h"
+#import "DataHandler.h"
+#import "IndicatorHandler.h"
+#import "AFNetworkTools.h"
+#import "Singleton.h"
+
+// 第三方类
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "Masonry.h"
+//#import "sqlite3.h"
+// 控件
+#import "DWTextField.h"
+#import "DWSearchBar.h"
+#import "DWImageView.h"
+#import "FZButton.h"
+#import "OptionView.h"
+#import "CountOptionView.h"
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+Add.h"
+
+// 类目
+#import "UIColor+Color.h"
+#import "UIButton+Category.h"
+
+
+//release
+#undef RELEASE_SAFELY
+#define RELEASE_SAFELY(__REF) \
+{\
+if (nil != (__REF)) \
+{\
+__REF = nil;\
+}\
+}
+
+//view安全释放
+#define VIEW_RELEASE_SAFELY(__REF) \
+{\
+if (nil != (__REF))\
+{\
+[__REF removeFromSuperview];\
+__REF = nil;\
+}\
+}
+
+//GCD
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), block)
+#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
+#define BACKGROUND(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), block)
+
+
+#endif
