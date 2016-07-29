@@ -18,7 +18,7 @@
 	## Other
 	*.moved-aside
 	*.xcuserstate
-	
+	*.DS_Store
 
 	## Obj-C/Swift specific
 	*.hmap
@@ -28,3 +28,4 @@
 	*.png
 	*.jpg
 	*.mp4
+	*.PNG
